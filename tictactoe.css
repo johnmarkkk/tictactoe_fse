@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameContainer {
+    text-align: center;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.tile {
+    width: 70px;
+    height: 70px;
+    border: solid 1px black;
+    font-size: 50px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+}
+
+button{
+    margin-top: 20px;
+    height: 30px;
+}
