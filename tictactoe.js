@@ -9,11 +9,15 @@ tile.forEach(tile => {
 });
 
 button.addEventListener('click', () => {
-            tile.forEach(tile => {
-                tile.textContent = "";
-            })
-        options = ["", "", "", "", "", "", "", "", ""];
-        disableTiles("auto");
+    tile.forEach(tile => {
+        tile.textContent = "";
+    })
+    options = ["", "", "", "", "", "", "", "", ""];
+    disableTiles("auto");
+
+    tile.forEach(tileElement => {
+        tileElement.style.boxShadow = "none";
+    });
         })
 
 
@@ -26,7 +30,6 @@ function clickTile() {
         playerChoice = playerChoice == "X" ? "O" : "X";
         h2.innerText = `${playerChoice}'s turn`;
 
-        
         condition(cellIndex);
     }
 }
@@ -43,6 +46,10 @@ function condition(cellIndex) {
         (options[2] === options[4] && options[4] === options[6] && options[2] !== "")
     ) {
         h2.innerText = `${options[cellIndex]} wins`;
+        tile.forEach(tileElement => {
+            tileElement.style.boxShadow = "0px 0px 10px rgba(127, 241, 5, 0.6)";
+        });
+        
         disableTiles("none");
         
     } else if (!options.includes("")) {
@@ -55,3 +62,4 @@ function disableTiles(value) {
         tileElement.style.pointerEvents = value;
     });
 }
+
